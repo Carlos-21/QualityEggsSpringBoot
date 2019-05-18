@@ -1,5 +1,7 @@
 package com.unmsm.fisi.model;
 
+import java.util.List;
+
 public class Producto {
 	private Integer nIdentificador;
 	private String sNombre;
