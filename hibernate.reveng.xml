@@ -13,4 +13,6 @@
   <table-filter match-catalog="qualityeggs" match-name="reg_pedido_trabajador"/>
   <table-filter match-catalog="qualityeggs" match-name="seg_perfil"/>
   <table-filter match-catalog="qualityeggs" match-name="seg_usuario"/>
+  <table-filter match-catalog="qualityeggs" match-name="multi_tab_cab"/>
+  <table-filter match-catalog="qualityeggs" match-name="multi_tab_det"/>
 </hibernate-reverse-engineering>
