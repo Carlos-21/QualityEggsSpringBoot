@@ -12,7 +12,7 @@ public class LoginController {
     public String irLogin(@ModelAttribute("mensajeExcepcion") String mensajeExcepcion, Model model)
     {
         model.addAttribute("mensajeExcepcion", mensajeExcepcion);
-        return "login";
+        return "views/login";
     }
 	
 }
