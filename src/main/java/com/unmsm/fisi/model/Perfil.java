@@ -1,43 +1,43 @@
 package com.unmsm.fisi.model;
 
 public class Perfil {
-	private Integer nidPerfil;
-	private String vnombre;
-	private String vdescripcion;
+	private Integer nIdPerfil;
+	private String sNombre;
+	private String sDescripcion;
 
 	public Perfil() {
 
 	}
 
-	public Perfil(Integer nidPerfil, String vnombre, String vdescripcion) {
+	public Perfil(Integer nIdPerfil, String sNombre, String sDescripcion) {
 		super();
-		this.nidPerfil = nidPerfil;
-		this.vnombre = vnombre;
-		this.vdescripcion = vdescripcion;
+		this.nIdPerfil = nIdPerfil;
+		this.sNombre = sNombre;
+		this.sDescripcion = sDescripcion;
 	}
 
-	public Integer getNidPerfil() {
-		return nidPerfil;
+	public Integer getnIdPerfil() {
+		return nIdPerfil;
 	}
 
-	public void setNidPerfil(Integer nidPerfil) {
-		this.nidPerfil = nidPerfil;
+	public void setnIdPerfil(Integer nIdPerfil) {
+		this.nIdPerfil = nIdPerfil;
 	}
 
-	public String getVnombre() {
-		return vnombre;
+	public String getsNombre() {
+		return sNombre;
 	}
 
-	public void setVnombre(String vnombre) {
-		this.vnombre = vnombre;
+	public void setsNombre(String sNombre) {
+		this.sNombre = sNombre;
 	}
 
-	public String getVdescripcion() {
-		return vdescripcion;
+	public String getsDescripcion() {
+		return sDescripcion;
 	}
 
-	public void setVdescripcion(String vdescripcion) {
-		this.vdescripcion = vdescripcion;
+	public void setsDescripcion(String sDescripcion) {
+		this.sDescripcion = sDescripcion;
 	}
 
 }

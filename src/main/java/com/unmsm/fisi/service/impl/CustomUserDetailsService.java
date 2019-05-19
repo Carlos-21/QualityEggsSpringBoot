@@ -18,7 +18,7 @@ import com.unmsm.fisi.configuration.security.CustomUser;
 import com.unmsm.fisi.model.Usuario;
 import com.unmsm.fisi.service.impl.seguridad.UsuarioServiceImpl;
 
-@Service
+@Service("customUserDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {
 
 	@Autowired
