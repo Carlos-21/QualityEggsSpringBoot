@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.unmsm.fisi.ConstantesGenerales;
 import com.unmsm.fisi.model.Producto;
-import com.unmsm.fisi.service.impl.ProductoServiceImpl;
+import com.unmsm.fisi.service.impl.mantenimiento.ProductoServiceImpl;
+import com.unmsm.fisi.utilitario.ConstantesGenerales;
 
 @RestController
 @RequestMapping("/mantenimiento/producto")
