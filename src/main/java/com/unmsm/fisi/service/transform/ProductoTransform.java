@@ -1,14 +1,15 @@
-package com.unmsm.fisi.model.transform;
+package com.unmsm.fisi.service.transform;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.unmsm.fisi.entity.ManProducto;
 import com.unmsm.fisi.model.Producto;
 
-@Service
+@Component("productoConvertidor")
 public class ProductoTransform implements Transform<Producto, ManProducto> {
 
 	@Override

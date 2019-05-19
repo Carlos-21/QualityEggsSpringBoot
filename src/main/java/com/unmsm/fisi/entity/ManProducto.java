@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -20,13 +21,27 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "man_producto", catalog = "qualityeggs")
 public class ManProducto implements java.io.Serializable {
+	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy = IDENTITY)
+
+	@Column(name = "nIdProducto", unique = true, nullable = false)
 	private Integer nidProducto;
+	@Column(name = "vNombre", length = 20)
 	private String vnombre;
+	@Column(name = "vDescripcion", length = 50)
 	private String vdescripcion;
+	@Column(name = "vTipo", length = 20)
 	private String vtipo;
+	@Column(name = "nStock")
 	private Integer nstock;
+	@Column(name = "nPrecioUnitario", precision = 22, scale = 0)
 	private Double nprecioUnitario;
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "reg_pedido_has_man_producto", catalog = "qualityeggs", joinColumns = {
+			@JoinColumn(name = "man_producto_nIdProducto", nullable = false, updatable = false) }, inverseJoinColumns = {
+					@JoinColumn(name = "reg_pedido_cliente_nIdPedido", nullable = false, updatable = false) })
 	private Set<RegPedidoCliente> regPedidoClientes = new HashSet<RegPedidoCliente>(0);
 
 	public ManProducto() {
@@ -42,10 +57,6 @@ public class ManProducto implements java.io.Serializable {
 		this.regPedidoClientes = regPedidoClientes;
 	}
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-
-	@Column(name = "nIdProducto", unique = true, nullable = false)
 	public Integer getNidProducto() {
 		return this.nidProducto;
 	}
@@ -54,7 +65,6 @@ public class ManProducto implements java.io.Serializable {
 		this.nidProducto = nidProducto;
 	}
 
-	@Column(name = "vNombre", length = 20)
 	public String getVnombre() {
 		return this.vnombre;
 	}
@@ -63,7 +73,6 @@ public class ManProducto implements java.io.Serializable {
 		this.vnombre = vnombre;
 	}
 
-	@Column(name = "vDescripcion", length = 50)
 	public String getVdescripcion() {
 		return this.vdescripcion;
 	}
@@ -72,7 +81,6 @@ public class ManProducto implements java.io.Serializable {
 		this.vdescripcion = vdescripcion;
 	}
 
-	@Column(name = "vTipo", length = 20)
 	public String getVtipo() {
 		return this.vtipo;
 	}
@@ -81,7 +89,6 @@ public class ManProducto implements java.io.Serializable {
 		this.vtipo = vtipo;
 	}
 
-	@Column(name = "nStock")
 	public Integer getNstock() {
 		return this.nstock;
 	}
@@ -90,7 +97,6 @@ public class ManProducto implements java.io.Serializable {
 		this.nstock = nstock;
 	}
 
-	@Column(name = "nPrecioUnitario", precision = 22, scale = 0)
 	public Double getNprecioUnitario() {
 		return this.nprecioUnitario;
 	}
@@ -99,10 +105,6 @@ public class ManProducto implements java.io.Serializable {
 		this.nprecioUnitario = nprecioUnitario;
 	}
 
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "reg_pedido_has_man_producto", catalog = "qualityeggs", joinColumns = {
-			@JoinColumn(name = "man_producto_nIdProducto", nullable = false, updatable = false) }, inverseJoinColumns = {
-					@JoinColumn(name = "reg_pedido_cliente_nIdPedido", nullable = false, updatable = false) })
 	public Set<RegPedidoCliente> getRegPedidoClientes() {
 		return this.regPedidoClientes;
 	}
