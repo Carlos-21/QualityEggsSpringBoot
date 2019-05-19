@@ -23,7 +23,6 @@ public class ProductoServiceImpl implements ProductoService{
 
 	@Override
 	public List<Producto> listarProductos() {
-		System.out.println("Entro");
 		return productoTransform.transformEM(productoRepository.findAll());
 	}
 
